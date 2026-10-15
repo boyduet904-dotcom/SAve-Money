@@ -1,0 +1,6 @@
+{
+  "name": "টাকা হিসাব - দৈনিক খরচ ও মাসিক বাজেট ট্র্যাকার",
+  "description": "প্রতিদিনের খরচের হিসাব, বাসা থেকে পাওয়া টাকা সংরক্ষণ এবং মাসিক বাজেট নিয়ন্ত্রণের সহজ ও কার্যকর অ্যাপ্লিকেশন।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

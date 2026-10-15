@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Hind Siliguri', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-mono-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Enhanced Print Formatting for Direct Browser PDF & Paper Printing */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 15mm 12mm;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Hide main app navigation, dashboard, floating banners, and interactive modal toolbars */
+  body > #root > div > main,
+  body > #root > div > header,
+  body > #root > div > footer,
+  nav,
+  aside,
+  .print-hidden,
+  button {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Unset modal backdrop and fixed scroll frames for pristine page flow */
+  .report-modal-overlay,
+  .fixed,
+  .backdrop-blur-xs {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    width: 100% !important;
+    max-height: none !important;
+    box-shadow: none !important;
+  }
+
+  .report-modal-card {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    max-height: none !important;
+    display: block !important;
+  }
+
+  /* Make print area span standard A4 width cleanly without clipping or truncated tables */
+  .print-area {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 0 15mm 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  td, th {
+    word-break: break-word !important;
+  }
+}
